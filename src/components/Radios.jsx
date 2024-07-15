@@ -1,10 +1,12 @@
 export function Radios({ options, selected, setSelected }) {
   return (
-    <div className="items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-      {options.map((option) => (
+    <div className="items-center w-full text-sm font-medium text-gray-900 mt-4">
+      {options.map((option, i) => (
         <label
           key={option}
-          className={`w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 ${selected === option ? "bg-cyan-300": ""}`}
+          className={`border-2 ${i ? "border-l-0" : ""} border-gray-200 p-2 inline-block w-12 text-center cursor-pointer ${
+            selected === option ? "bg-slate-700 text-white" : ""
+          }`}
           onChange={(e) => setSelected(e.target.value)}
         >
           <input
@@ -14,7 +16,7 @@ export function Radios({ options, selected, setSelected }) {
             checked={selected === option}
             onChange={(e) => setSelected(e.target.value)}
           />
-          <span className="ml-2">{option}</span>
+          <span>{option}</span>
         </label>
       ))}
     </div>

@@ -1,4 +1,4 @@
-export default [
+const positions = [
   {
     minor: 1,
     major: 5,
@@ -94,3 +94,5 @@ export default [
     ],
   },
 ];
+
+export default positions;

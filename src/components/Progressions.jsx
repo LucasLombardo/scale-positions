@@ -1,8 +1,8 @@
 export default function Progressions({ progressions }) {
   return (
-    <div>
-      <h1>Popular Progressions</h1>
-      <div className="grid grid-cols-5 gap-1">
+    <div className="mt-4 w-fit">
+      <h1 className="font-bold">Popular Progressions:</h1>
+      <div className="grid grid-cols-5 gap-1 w-fit">
         {progressions.map(({ chords, description }) => (
           <div>
             <p>

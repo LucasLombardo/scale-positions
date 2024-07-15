@@ -1,4 +1,4 @@
-export default [
+const notes = [
   [
     "E",
     "F",
@@ -120,3 +120,5 @@ export default [
     "A",
   ],
 ];
+
+export default notes;

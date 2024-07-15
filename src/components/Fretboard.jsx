@@ -5,7 +5,7 @@ export default function Fretboard({
   fretCount = 6,
   startingFret = 0,
   markers = [],
-  keyNote= "",
+  keyNote = "",
   ...props
 }) {
   const MARGIN = { LEFT: 30, RIGHT: 10, TOP: 15, BOTTOM: 35 };
@@ -22,7 +22,7 @@ export default function Fretboard({
   });
   const stringLabels = ["E", "B", "G", "D", "A", "E"];
   const fretLabels = [...new Array(fretCount - 1)].map(
-    (_, i) => startingFret + i
+    (_, i) => startingFret + i,
   );
   const displayFrets = [3, 5, 7, 9, 12, 15, 17];
 
@@ -67,12 +67,12 @@ export default function Fretboard({
           stroke-width="2"
         />
       ))}
-      {markers.map(({ string, fret}) => {
-        const note = notes[string][fret + startingFret - 1]
+      {markers.map(({ string, fret }) => {
+        const note = notes[string][fret + startingFret - 1];
         const isKeyNote = note === keyNote;
         const x = Math.max(
           fretPositions[startingFret ? fret : fret - 1] - fretPositions[0],
-          14
+          14,
         );
         return (
           <>

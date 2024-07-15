@@ -1,5 +1,14 @@
-export default {
+const keys = {
   A: {
+    degrees: [
+      ["I (Tonic)", "A major"],
+      ["ii (Supertonic)", "B minor"],
+      ["iii (Mediant)", "C# minor"],
+      ["IV (Subdominant)", "D major"],
+      ["V (Dominant)", "E major"],
+      ["vi (Submediant)", "F# minor"],
+      ["vii° (Leading Tone)", "G# diminished"],
+    ],
     pentatonic: ["A", "B", "C#", "E", "F#"],
     full: ["A", "B", "C#", "D", "E", "F#", "G#"],
     positionStarts: [4, 6, 9, 11, 2],
@@ -17,6 +26,15 @@ export default {
     ],
   },
   Am: {
+    degrees: [
+      ["i (Tonic)", "A minor"],
+      ["ii° (Supertonic)", "B diminished"],
+      ["III (Mediant)", "C major"],
+      ["iv (Subdominant)", "D minor"],
+      ["v (Dominant)", "E minor"],
+      ["VI (Submediant)", "F major"],
+      ["VII (Subtonic)", "G major"],
+    ],
     pentatonic: ["A", "C", "D", "E", "G"],
     full: ["A", "B", "C", "D", "E", "F", "G"],
     positionStarts: [5, 7, 9, 12, 2],
@@ -34,6 +52,15 @@ export default {
     ],
   },
   "A#": {
+    degrees: [
+      ["I (Tonic)", "A# major"],
+      ["ii (Supertonic)", "C minor"],
+      ["iii (Mediant)", "D minor"],
+      ["IV (Subdominant)", "D# major"],
+      ["V (Dominant)", "F major"],
+      ["vi (Submediant)", "G minor"],
+      ["vii° (Leading Tone)", "A diminished"],
+    ],
     pentatonic: ["A#", "C#", "D#", "F", "G"],
     full: ["A#", "B#", "C#", "D#", "E#", "F#", "G#"],
     positionStarts: [5, 7, 10, 0, 3],
@@ -51,6 +78,15 @@ export default {
     ],
   },
   "A#m": {
+    degrees: [
+      ["i (Tonic)", "A# minor"],
+      ["ii° (Supertonic)", "B# diminished"],
+      ["III (Mediant)", "C# major"],
+      ["iv (Subdominant)", "D# minor"],
+      ["v (Dominant)", "E# minor"],
+      ["VI (Submediant)", "F# major"],
+      ["VII (Subtonic)", "G# major"],
+    ],
     pentatonic: ["A#", "C#", "D#", "F", "G#"],
     full: ["A#", "B#", "C#", "D#", "E#", "F#", "G#"],
     positionStarts: [6, 8, 10, 1, 3],
@@ -68,6 +104,15 @@ export default {
     ],
   },
   B: {
+    degrees: [
+      ["I (Tonic)", "B major"],
+      ["ii (Supertonic)", "C# minor"],
+      ["iii (Mediant)", "D# minor"],
+      ["IV (Subdominant)", "E major"],
+      ["V (Dominant)", "F# major"],
+      ["vi (Submediant)", "G# minor"],
+      ["vii° (Leading Tone)", "A# diminished"],
+    ],
     pentatonic: ["B", "C#", "D#", "F#", "G#"],
     full: ["B", "C#", "D#", "E", "F#", "G#", "A#"],
     positionStarts: [6, 8, 11, 1, 4],
@@ -85,6 +130,15 @@ export default {
     ],
   },
   Bm: {
+    degrees: [
+      ["i (Tonic)", "B minor"],
+      ["ii° (Supertonic)", "C# diminished"],
+      ["III (Mediant)", "D major"],
+      ["iv (Subdominant)", "E minor"],
+      ["v (Dominant)", "F# minor"],
+      ["VI (Submediant)", "G major"],
+      ["VII (Subtonic)", "A major"],
+    ],
     pentatonic: ["B", "D", "E", "F#", "A"],
     full: ["B", "C#", "D", "E", "F#", "G", "A"],
     positionStarts: [7, 9, 11, 2, 4],
@@ -102,6 +156,15 @@ export default {
     ],
   },
   C: {
+    degrees: [
+      ["I (Tonic)", "C major"],
+      ["ii (Supertonic)", "D minor"],
+      ["iii (Mediant)", "E minor"],
+      ["IV (Subdominant)", "F major"],
+      ["V (Dominant)", "G major"],
+      ["vi (Submediant)", "A minor"],
+      ["vii° (Leading Tone)", "B diminished"],
+    ],
     pentatonic: ["C", "D", "E", "G", "A"],
     full: ["C", "D", "E", "F", "G", "A", "B"],
     positionStarts: [7, 9, 12, 2, 5],
@@ -119,6 +182,15 @@ export default {
     ],
   },
   Cm: {
+    degrees: [
+      ["i (Tonic)", "C minor"],
+      ["ii° (Supertonic)", "D diminished"],
+      ["III (Mediant)", "Eb major"],
+      ["iv (Subdominant)", "F minor"],
+      ["v (Dominant)", "G minor"],
+      ["VI (Submediant)", "Ab major"],
+      ["VII (Subtonic)", "Bb major"],
+    ],
     pentatonic: ["C", "D#", "F", "G", "A#"],
     full: ["C", "D", "D#", "F", "G", "A", "A#"],
     positionStarts: [8, 10, 12, 3, 5],
@@ -136,6 +208,15 @@ export default {
     ],
   },
   "C#": {
+    degrees: [
+      ["I (Tonic)", "C# major"],
+      ["ii (Supertonic)", "D# minor"],
+      ["iii (Mediant)", "E# minor"],
+      ["IV (Subdominant)", "F# major"],
+      ["V (Dominant)", "G# major"],
+      ["vi (Submediant)", "A# minor"],
+      ["vii° (Leading Tone)", "B# diminished"],
+    ],
     pentatonic: ["C#", "D#", "F", "G#", "A#"],
     full: ["C#", "D#", "E#", "F#", "G#", "A#", "B#"],
     positionStarts: [8, 10, 1, 3, 6],
@@ -153,6 +234,15 @@ export default {
     ],
   },
   "C#m": {
+    degrees: [
+      ["i (Tonic)", "C# minor"],
+      ["ii° (Supertonic)", "D# diminished"],
+      ["III (Mediant)", "E major"],
+      ["iv (Subdominant)", "F# minor"],
+      ["v (Dominant)", "G# minor"],
+      ["VI (Submediant)", "A major"],
+      ["VII (Subtonic)", "B major"],
+    ],
     pentatonic: ["C#", "E", "F#", "G#", "B"],
     full: ["C#", "D#", "E", "F#", "G#", "A", "B"],
     positionStarts: [9, 11, 1, 4, 6],
@@ -170,6 +260,15 @@ export default {
     ],
   },
   D: {
+    degrees: [
+      ["I (Tonic)", "D major"],
+      ["ii (Supertonic)", "E minor"],
+      ["iii (Mediant)", "F# minor"],
+      ["IV (Subdominant)", "G major"],
+      ["V (Dominant)", "A major"],
+      ["vi (Submediant)", "B minor"],
+      ["vii° (Leading Tone)", "C# diminished"],
+    ],
     pentatonic: ["D", "E", "F#", "A", "B"],
     full: ["D", "E", "F#", "G", "A", "B", "C#"],
     positionStarts: [9, 11, 2, 4, 7],
@@ -187,6 +286,15 @@ export default {
     ],
   },
   Dm: {
+    degrees: [
+      ["i (Tonic)", "D minor"],
+      ["ii° (Supertonic)", "E diminished"],
+      ["III (Mediant)", "F major"],
+      ["iv (Subdominant)", "G minor"],
+      ["v (Dominant)", "A minor"],
+      ["VI (Submediant)", "Bb major"],
+      ["VII (Subtonic)", "C major"],
+    ],
     pentatonic: ["D", "F", "G", "A", "C"],
     full: ["D", "E", "F", "G", "A", "A#", "C"],
     positionStarts: [10, 12, 2, 5, 7],
@@ -204,6 +312,15 @@ export default {
     ],
   },
   "D#": {
+    degrees: [
+      ["I (Tonic)", "D# major"],
+      ["ii (Supertonic)", "F minor"],
+      ["iii (Mediant)", "G minor"],
+      ["IV (Subdominant)", "G# major"],
+      ["V (Dominant)", "A# major"],
+      ["vi (Submediant)", "Cm"],
+      ["vii° (Leading Tone)", "D diminished"],
+    ],
     pentatonic: ["D#", "F", "G", "A#", "C"],
     full: ["D#", "E#", "F#", "G#", "A#", "B", "C#"],
     positionStarts: [10, 12, 3, 5, 8],
@@ -221,6 +338,15 @@ export default {
     ],
   },
   "D#m": {
+    degrees: [
+      ["i (Tonic)", "D# minor"],
+      ["ii° (Supertonic)", "F# diminished"],
+      ["III (Mediant)", "G# major"],
+      ["iv (Subdominant)", "A# minor"],
+      ["v (Dominant)", "B minor"],
+      ["VI (Submediant)", "C# major"],
+      ["VII (Subtonic)", "E major"],
+    ],
     pentatonic: ["D#", "F#", "G#", "A#", "C#"],
     full: ["D#", "F", "F#", "G#", "A#", "B", "C#"],
     positionStarts: [11, 1, 3, 6, 8],
@@ -238,6 +364,15 @@ export default {
     ],
   },
   E: {
+    degrees: [
+      ["I (Tonic)", "E major"],
+      ["ii (Supertonic)", "F# minor"],
+      ["iii (Mediant)", "G# minor"],
+      ["IV (Subdominant)", "A major"],
+      ["V (Dominant)", "B major"],
+      ["vi (Submediant)", "C# minor"],
+      ["vii° (Leading Tone)", "D# diminished"],
+    ],
     pentatonic: ["E", "F#", "G#", "B", "C#"],
     full: ["E", "F#", "G#", "A", "B", "C#", "D#"],
     positionStarts: [11, 1, 4, 6, 9],
@@ -255,6 +390,15 @@ export default {
     ],
   },
   Em: {
+    degrees: [
+      ["i (Tonic)", "E minor"],
+      ["ii° (Supertonic)", "F# diminished"],
+      ["III (Mediant)", "G major"],
+      ["iv (Subdominant)", "A minor"],
+      ["v (Dominant)", "B minor"],
+      ["VI (Submediant)", "C major"],
+      ["VII (Subtonic)", "D major"],
+    ],
     pentatonic: ["E", "G", "A", "B", "D"],
     full: ["E", "F#", "G", "A", "B", "C", "D"],
     positionStarts: [12, 2, 4, 7, 9],
@@ -272,6 +416,15 @@ export default {
     ],
   },
   F: {
+    degrees: [
+      ["I (Tonic)", "F major"],
+      ["ii (Supertonic)", "G minor"],
+      ["iii (Mediant)", "A minor"],
+      ["IV (Subdominant)", "Bb major"],
+      ["V (Dominant)", "C major"],
+      ["vi (Submediant)", "D minor"],
+      ["vii° (Leading Tone)", "E diminished"],
+    ],
     pentatonic: ["F", "G", "A", "C", "D"],
     full: ["F", "G", "A", "A#", "C", "D", "E"],
     positionStarts: [12, 2, 5, 7, 10],
@@ -289,6 +442,15 @@ export default {
     ],
   },
   Fm: {
+    degrees: [
+      ["i (Tonic)", "F minor"],
+      ["ii° (Supertonic)", "G diminished"],
+      ["III (Mediant)", "Ab major"],
+      ["iv (Subdominant)", "Bb minor"],
+      ["v (Dominant)", "C minor"],
+      ["VI (Submediant)", "Db major"],
+      ["VII (Subtonic)", "Eb major"],
+    ],
     pentatonic: ["F", "G#", "A#", "C", "D#"],
     full: ["F", "G", "G#", "A#", "C", "D", "D#"],
     positionStarts: [1, 3, 5, 8, 10],
@@ -306,6 +468,15 @@ export default {
     ],
   },
   "F#": {
+    degrees: [
+      ["I (Tonic)", "F# major"],
+      ["ii (Supertonic)", "G# minor"],
+      ["iii (Mediant)", "A# minor"],
+      ["IV (Subdominant)", "B major"],
+      ["V (Dominant)", "C# major"],
+      ["vi (Submediant)", "D# minor"],
+      ["vii° (Leading Tone)", "E# diminished"],
+    ],
     pentatonic: ["F#", "G#", "A#", "C#", "D#"],
     full: ["F#", "G#", "A#", "B", "C#", "D#", "E#"],
     positionStarts: [1, 3, 6, 8, 11],
@@ -317,12 +488,25 @@ export default {
       { chords: ["F#", "A#m", "D#m", "B"], description: "I-iii-vi-IV" },
       { chords: ["F#", "B", "F#", "C#"], description: "I-IV-I-V" },
       { chords: ["F#", "C#", "F#", "B"], description: "I-V-I-IV" },
-      { chords: ["F#", "B", "G#m", "C#"], description: "I-IV-ii-V" },
+      {
+        chords: ["F#", "B", "G#m", "C#"],
+
+        description: "I-IV-ii-V",
+      },
       { chords: ["F#", "E", "B", "C#"], description: "I-bVII-IV-V" },
       { chords: ["F#", "C#", "B", "F#"], description: "I-V-IV-I" },
     ],
   },
   "F#m": {
+    degrees: [
+      ["i (Tonic)", "F# minor"],
+      ["ii° (Supertonic)", "G# diminished"],
+      ["III (Mediant)", "A major"],
+      ["iv (Subdominant)", "B minor"],
+      ["v (Dominant)", "C# minor"],
+      ["VI (Submediant)", "D major"],
+      ["VII (Subtonic)", "E major"],
+    ],
     pentatonic: ["F#", "A", "B", "C#", "E"],
     full: ["F#", "G#", "A", "B", "C#", "D", "E"],
     positionStarts: [2, 4, 6, 9, 11],
@@ -340,6 +524,15 @@ export default {
     ],
   },
   G: {
+    degrees: [
+      ["I (Tonic)", "G major"],
+      ["ii (Supertonic)", "A minor"],
+      ["iii (Mediant)", "B minor"],
+      ["IV (Subdominant)", "C major"],
+      ["V (Dominant)", "D major"],
+      ["vi (Submediant)", "E minor"],
+      ["vii° (Leading Tone)", "F# diminished"],
+    ],
     pentatonic: ["G", "A", "B", "D", "E"],
     full: ["G", "A", "B", "C", "D", "E", "F#"],
     positionStarts: [2, 4, 7, 9, 12],
@@ -357,6 +550,15 @@ export default {
     ],
   },
   Gm: {
+    degrees: [
+      ["i (Tonic)", "G minor"],
+      ["ii° (Supertonic)", "A diminished"],
+      ["III (Mediant)", "Bb major"],
+      ["iv (Subdominant)", "C minor"],
+      ["v (Dominant)", "D minor"],
+      ["VI (Submediant)", "Eb major"],
+      ["VII (Subtonic)", "F major"],
+    ],
     pentatonic: ["G", "A#", "C", "D", "F"],
     full: ["G", "A", "A#", "C", "D", "D#", "F"],
     positionStarts: [3, 5, 7, 10, 12],
@@ -374,6 +576,15 @@ export default {
     ],
   },
   "G#": {
+    degrees: [
+      ["I (Tonic)", "G# major"],
+      ["ii (Supertonic)", "A# minor"],
+      ["iii (Mediant)", "B# minor"],
+      ["IV (Subdominant)", "C# major"],
+      ["V (Dominant)", "D# major"],
+      ["vi (Submediant)", "E# minor"],
+      ["vii° (Leading Tone)", "G diminished"],
+    ],
     pentatonic: ["G#", "A#", "C", "D#", "F"],
     full: ["G#", "A#", "B#", "C#", "D#", "E#", "G"],
     positionStarts: [3, 5, 8, 10, 1],
@@ -391,6 +602,15 @@ export default {
     ],
   },
   "G#m": {
+    degrees: [
+      ["i (Tonic)", "G# minor"],
+      ["ii° (Supertonic)", "A# diminished"],
+      ["III (Mediant)", "B major"],
+      ["iv (Subdominant)", "C# minor"],
+      ["v (Dominant)", "D# minor"],
+      ["VI (Submediant)", "E major"],
+      ["VII (Subtonic)", "F# major"],
+    ],
     pentatonic: ["G#", "B", "C#", "D#", "F#"],
     full: ["G#", "A#", "B", "C#", "D#", "F", "F#"],
     positionStarts: [4, 6, 8, 11, 1],
@@ -408,3 +628,5 @@ export default {
     ],
   },
 };
+
+export default keys;
