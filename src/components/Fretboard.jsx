@@ -5,10 +5,10 @@ export default function Fretboard({
   fretCount = 6,
   startingFret = 0,
   markers = [],
-  isMinorKey = false,
+  keyNote= "",
   ...props
 }) {
-  const MARGIN = { LEFT: 25, RIGHT: 10, TOP: 15, BOTTOM: 35 };
+  const MARGIN = { LEFT: 30, RIGHT: 10, TOP: 15, BOTTOM: 35 };
   const innerHeight = height - MARGIN.TOP - MARGIN.BOTTOM;
   const innerWidth = width - MARGIN.LEFT - MARGIN.RIGHT;
 
@@ -67,32 +67,30 @@ export default function Fretboard({
           stroke-width="2"
         />
       ))}
-
-      {markers.map(({ string, fret, minor, major }) => {
-        const isKeyNote = (isMinorKey && minor) || (!isMinorKey && major);
+      {markers.map(({ string, fret}) => {
+        const note = notes[string][fret + startingFret - 1]
+        const isKeyNote = note === keyNote;
+        const x = Math.max(
+          fretPositions[startingFret ? fret : fret - 1] - fretPositions[0],
+          14
+        );
         return (
           <>
             <circle
-              cx={fretPositions[fret] - fretPositions[0]}
+              cx={x}
               cy={stringPositions[string]}
               r="12"
-              fill={
-                isKeyNote
-                  ? "black"
-                  : "white"
-              }
+              fill={isKeyNote ? "black" : "white"}
               stroke="black"
               stroke-width="2"
             />
             <text
-              x={fretPositions[fret] - fretPositions[0] - 5}
+              x={x - 5}
               y={stringPositions[string] + 5}
               font-size="16"
-              fill={isKeyNote
-                ? "white"
-                : "black"}
+              fill={isKeyNote ? "white" : "black"}
             >
-              {notes[string][fret + startingFret - 1]}
+              {note}
             </text>
           </>
         );

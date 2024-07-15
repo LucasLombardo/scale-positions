@@ -4,6 +4,7 @@ import notes from "./data/notes";
 import keys from "./data/keys";
 import { useState } from "react";
 import { Radios } from "./components/Radios";
+import Progressions from "./components/Progressions";
 
 function App() {
   const [key, setKey] = useState("C");
@@ -19,31 +20,35 @@ function App() {
 
   const keyType = key.endsWith("m") ? "minor" : "major";
   const sortedPositions = positions.sort((a, b) => a[keyType] - b[keyType]);
-  console.log(sortedPositions)
 
   return (
-    <div className="App">
+    <div className="container mx-auto px-4">
       <div>
         <Radios
           options={Object.keys(keys)}
           setSelected={setKey}
           selected={key}
         />
+        <Progressions progressions={keys[key].progressions}/>
         <Fretboard
           markers={markers}
           startingFret={1}
+          keyNote={key.replace("m", "")}
           fretCount={18}
           width={1100}
           height={200}
-          className="full"
+          className="full mx-auto mt-6"
         />
-        {sortedPositions.map((position, i) => (
-          <Fretboard
-            key={i}
-            markers={position.markers}
-            startingFret={keys[key].positionStarts[i]}
-          />
-        ))}
+        <div className="grid grid-cols-3 gap-2 place-items-center mt-6">
+          {sortedPositions.map((position, i) => (
+            <Fretboard
+              key={i}
+              keyNote={key.replace("m", "")}
+              markers={position.markers}
+              startingFret={keys[key].positionStarts[i]}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
