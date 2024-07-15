@@ -1,18 +1,21 @@
 export default function Degrees({ degrees }) {
-  console.log(degrees);
   return (
-    <table class="table-fixed mt-4">
-      <thead>
-        <tr>
+    <table className="mt-2 text-sm w-full divide-y divide-slate-200 border text-left">
+      <thead className="w-full">
+        <tr className="grid grid-cols-7 w-full auto-cols-max divide-x">
           {degrees.map(([label]) => (
-            <th className="border-2 p-2">{label}</th>
+            <th key={label} className="p-1">
+              {label}
+            </th>
           ))}
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr className="grid grid-cols-7 w-full divide-x">
           {degrees.map(([_, chord]) => (
-            <td className="border-2 p-2">{chord}</td>
+            <td key={chord} className="p-1">
+              {chord}
+            </td>
           ))}
         </tr>
       </tbody>

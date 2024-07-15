@@ -1,6 +1,6 @@
 export function Radios({ options, selected, setSelected }) {
   return (
-    <div className="items-center w-full text-sm font-medium text-gray-900 mt-4">
+    <div className="items-center text-sm font-medium text-gray-900 mt-2 w-fit mx-auto">
       {options.map((option, i) => (
         <label
           key={option}

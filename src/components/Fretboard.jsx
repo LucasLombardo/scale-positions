@@ -29,7 +29,13 @@ export default function Fretboard({
   return (
     <svg viewBox={`0, 0, ${width}, ${height}`} {...props}>
       {stringLabels.map((s, i) => (
-        <text x={5} y={stringPositions[i] + 5} font-size="16" fill="black">
+        <text
+          key={i}
+          x={5}
+          y={stringPositions[i] + 5}
+          fontSize="16"
+          fill="black"
+        >
           {s}
         </text>
       ))}
@@ -37,9 +43,10 @@ export default function Fretboard({
         if (i && !displayFrets.includes(n)) return null;
         return (
           <text
+            key={n}
             x={fretPositions[n - startingFret] + fretPositions[0] - 6}
             y={MARGIN.TOP + innerHeight + 30}
-            font-size="16"
+            fontSize="16"
             fill="black"
           >
             {n}
@@ -48,23 +55,24 @@ export default function Fretboard({
       })}
       {fretPositions.map((x) => (
         <line
+          key={x}
           x1={x}
           y1={MARGIN.TOP}
           x2={x}
           y2={MARGIN.TOP + innerHeight}
           stroke="black"
-          key={x}
-          stroke-width="2"
+          strokeWidth="2"
         />
       ))}
       {stringPositions.map((y) => (
         <line
+          key={y}
           x1={MARGIN.LEFT}
           y1={y}
           x2={MARGIN.LEFT + innerWidth}
           y2={y}
           stroke="black"
-          stroke-width="2"
+          strokeWidth="2"
         />
       ))}
       {markers.map(({ string, fret }) => {
@@ -75,24 +83,24 @@ export default function Fretboard({
           14,
         );
         return (
-          <>
+          <g key={`${string}-${fret}`}>
             <circle
               cx={x}
               cy={stringPositions[string]}
               r="12"
               fill={isKeyNote ? "black" : "white"}
               stroke="black"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <text
               x={x - 5}
               y={stringPositions[string] + 5}
-              font-size="16"
+              fontSize="16"
               fill={isKeyNote ? "white" : "black"}
             >
               {note}
             </text>
-          </>
+          </g>
         );
       })}
     </svg>

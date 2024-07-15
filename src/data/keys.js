@@ -37,7 +37,7 @@ const keys = {
     ],
     pentatonic: ["A", "C", "D", "E", "G"],
     full: ["A", "B", "C", "D", "E", "F", "G"],
-    positionStarts: [5, 7, 9, 12, 2],
+    positionStarts: [5, 7, 9, 0, 2],
     progressions: [
       { chords: ["Am", "F", "C", "G"], description: "i-VI-III-VII" },
       { chords: ["Am", "Dm", "E"], description: "i-iv-V" },
@@ -167,7 +167,7 @@ const keys = {
     ],
     pentatonic: ["C", "D", "E", "G", "A"],
     full: ["C", "D", "E", "F", "G", "A", "B"],
-    positionStarts: [7, 9, 12, 2, 5],
+    positionStarts: [7, 9, 0, 2, 5],
     progressions: [
       { chords: ["C", "F", "G", "C"], description: "I-IV-V-I" },
       { chords: ["C", "Am", "F", "G"], description: "I-vi-IV-V" },
@@ -193,7 +193,7 @@ const keys = {
     ],
     pentatonic: ["C", "D#", "F", "G", "A#"],
     full: ["C", "D", "D#", "F", "G", "A", "A#"],
-    positionStarts: [8, 10, 12, 3, 5],
+    positionStarts: [8, 10, 0, 3, 5],
     progressions: [
       { chords: ["Cm", "G#", "D#", "A#"], description: "i-VI-III-VII" },
       { chords: ["Cm", "Fm", "G"], description: "i-iv-V" },
@@ -297,7 +297,7 @@ const keys = {
     ],
     pentatonic: ["D", "F", "G", "A", "C"],
     full: ["D", "E", "F", "G", "A", "A#", "C"],
-    positionStarts: [10, 12, 2, 5, 7],
+    positionStarts: [10, 0, 2, 5, 7],
     progressions: [
       { chords: ["Dm", "Bb", "F", "C"], description: "i-VI-III-VII" },
       { chords: ["Dm", "Gm", "A"], description: "i-iv-V" },
@@ -323,7 +323,7 @@ const keys = {
     ],
     pentatonic: ["D#", "F", "G", "A#", "C"],
     full: ["D#", "E#", "F#", "G#", "A#", "B", "C#"],
-    positionStarts: [10, 12, 3, 5, 8],
+    positionStarts: [10, 0, 3, 5, 8],
     progressions: [
       { chords: ["D#", "G#", "A#", "D#"], description: "I-IV-V-I" },
       { chords: ["D#", "Cm", "G#", "A#"], description: "I-vi-IV-V" },
@@ -401,7 +401,7 @@ const keys = {
     ],
     pentatonic: ["E", "G", "A", "B", "D"],
     full: ["E", "F#", "G", "A", "B", "C", "D"],
-    positionStarts: [12, 2, 4, 7, 9],
+    positionStarts: [0, 2, 4, 7, 9],
     progressions: [
       { chords: ["Em", "C", "G", "D"], description: "i-VI-III-VII" },
       { chords: ["Em", "Am", "B"], description: "i-iv-V" },
@@ -427,7 +427,7 @@ const keys = {
     ],
     pentatonic: ["F", "G", "A", "C", "D"],
     full: ["F", "G", "A", "A#", "C", "D", "E"],
-    positionStarts: [12, 2, 5, 7, 10],
+    positionStarts: [0, 2, 5, 7, 10],
     progressions: [
       { chords: ["F", "A#", "C", "F"], description: "I-IV-V-I" },
       { chords: ["F", "Dm", "A#", "C"], description: "I-vi-IV-V" },
@@ -535,7 +535,7 @@ const keys = {
     ],
     pentatonic: ["G", "A", "B", "D", "E"],
     full: ["G", "A", "B", "C", "D", "E", "F#"],
-    positionStarts: [2, 4, 7, 9, 12],
+    positionStarts: [2, 4, 7, 9, 0],
     progressions: [
       { chords: ["G", "C", "D", "G"], description: "I-IV-V-I" },
       { chords: ["G", "Em", "C", "D"], description: "I-vi-IV-V" },
@@ -561,7 +561,7 @@ const keys = {
     ],
     pentatonic: ["G", "A#", "C", "D", "F"],
     full: ["G", "A", "A#", "C", "D", "D#", "F"],
-    positionStarts: [3, 5, 7, 10, 12],
+    positionStarts: [3, 5, 7, 10, 0],
     progressions: [
       { chords: ["Gm", "D#", "A#", "F"], description: "i-VI-III-VII" },
       { chords: ["Gm", "Cm", "D"], description: "i-iv-V" },
