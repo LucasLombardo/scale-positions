@@ -19,6 +19,7 @@ export default function FullBoard({ selectedKey }) {
       fretCount={18}
       width={1100}
       height={200}
+      boldedNotes={keys[selectedKey].pentatonic}
       className="full mt-4 mx-auto"
     />
   );

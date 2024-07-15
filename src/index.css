@@ -23,3 +23,10 @@ svg {
 .full {
   width: 1000px;
 }
+.string {
+  fill: lightslategray;
+}
+.string--bold {
+  fill: navy;
+  font-weight: bold;
+}

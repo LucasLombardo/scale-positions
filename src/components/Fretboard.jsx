@@ -6,6 +6,7 @@ export default function Fretboard({
   startingFret = 0,
   markers = [],
   keyNote = "",
+  boldedNotes = [],
   ...props
 }) {
   const MARGIN = { LEFT: 30, RIGHT: 10, TOP: 15, BOTTOM: 35 };
@@ -34,7 +35,7 @@ export default function Fretboard({
           x={5}
           y={stringPositions[i] + 5}
           fontSize="16"
-          fill="black"
+          className={boldedNotes.includes(s) ? "string string--bold" : "string"}
         >
           {s}
         </text>
@@ -93,10 +94,12 @@ export default function Fretboard({
               strokeWidth="2"
             />
             <text
-              x={x - 5}
-              y={stringPositions[string] + 5}
-              fontSize="16"
+              x={x}
+              y={stringPositions[string] + 1.5}
+              fontSize="15"
               fill={isKeyNote ? "white" : "black"}
+              textAnchor="middle"
+              dominant-baseline="middle"
             >
               {note}
             </text>
