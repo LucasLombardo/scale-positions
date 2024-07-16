@@ -42,7 +42,10 @@ function App() {
               className="mt-2 text-sm w-full"
               degrees={keys[key].degrees}
             />
-            <Progressions className="mt-2 w-full" progressions={keys[key].progressions} />
+            <Progressions
+              className="mt-2 w-full"
+              progressions={keys[key].progressions}
+            />
 
             <div className="grid grid-cols-3 gap-2 place-items-center mt-2">
               {sortedPositions.map((position, i) => (
@@ -72,19 +75,28 @@ function App() {
               selected={key}
             />
           </div>
-          <Progressions className="text-[8px] mt-1" isDesktop={isDesktop} progressions={keys[key].progressions} />
+          <Progressions
+            className="text-[8px] mt-1"
+            isDesktop={isDesktop}
+            progressions={keys[key].progressions}
+          />
           <div className="grid grid-cols-2 gap-1 place-items-center mt-2 text-sm">
-              {sortedPositions.map((position, i) => (
-                <ScalePosition key={i} selectedKey={key} position={position} width={width / 2.2} />
-              ))}
-              <button
-                className="border-2 border-gray-200 p-2 text-center"
-                onClick={() => setSortLR(!sortLR)}
-              >
-                {sortLR ? "Sort Position #" : "Sort L-R"}
-              </button>
-            </div>
-            <FullBoard selectedKey={key} width={width * 0.97} />
+            {sortedPositions.map((position, i) => (
+              <ScalePosition
+                key={i}
+                selectedKey={key}
+                position={position}
+                width={width / 2.2}
+              />
+            ))}
+            <button
+              className="border-2 border-gray-200 p-2 text-center"
+              onClick={() => setSortLR(!sortLR)}
+            >
+              {sortLR ? "Sort Position #" : "Sort L-R"}
+            </button>
+          </div>
+          <FullBoard selectedKey={key} width={width * 0.97} />
         </>
       )}
     </div>

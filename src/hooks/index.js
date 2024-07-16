@@ -1,1 +1,1 @@
-export * from "./useScreenWidth"
+export * from "./useScreenWidth";

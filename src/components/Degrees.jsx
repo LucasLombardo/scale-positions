@@ -1,13 +1,15 @@
-export default function Degrees({ degrees, isAbbreviated, className= "" }) {
+export default function Degrees({ degrees, isAbbreviated, className = "" }) {
   const abbreviateChord = (chord) => {
     let result = chord.replace(" minor", "m");
     result = result.replace(" major", "");
     result = result.replace(" diminished", "dim");
     return result;
-  }
+  };
 
   return (
-    <table className={`${className} divide-y divide-slate-200 border text-center`}>
+    <table
+      className={`${className} divide-y divide-slate-200 border text-center`}
+    >
       <thead className="w-full">
         <tr className="grid grid-cols-7 w-full auto-cols-max divide-x">
           {degrees.map(([label]) => (
