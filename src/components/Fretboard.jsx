@@ -99,7 +99,7 @@ export default function Fretboard({
               fontSize="15"
               fill={isKeyNote ? "white" : "black"}
               textAnchor="middle"
-              dominant-baseline="middle"
+              dominantBaseline="middle"
             >
               {note}
             </text>

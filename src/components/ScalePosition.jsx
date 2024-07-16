@@ -4,20 +4,19 @@ import keys from "../data/keys";
 export default function ScalePosition({
   selectedKey,
   position,
-  positionIndex,
 }) {
   const keyType = selectedKey.endsWith("m") ? "Minor" : "Major";
-
+    const positionNumber = position[keyType.toLowerCase()]
   return (
     <div>
       <h2 className="font-bold text-center">
-        {keyType} Position {positionIndex + 1}
+        {keyType} Position {positionNumber}
       </h2>
-      <p className="text-center text-xs">{["E", "D", "C", "A", "G"][positionIndex]} Shape</p>
+      <p className="text-center text-xs">{["E", "D", "C", "A", "G"][positionNumber - 1]} Shape</p>
       <Fretboard
         keyNote={selectedKey.replace("m", "")}
         markers={position.markers}
-        startingFret={keys[selectedKey].positionStarts[positionIndex]}
+        startingFret={keys[selectedKey].positionStarts[positionNumber - 1]}
         boldedNotes={keys[selectedKey].pentatonic}
       />
     </div>

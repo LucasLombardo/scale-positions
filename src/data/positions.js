@@ -2,8 +2,6 @@ const positions = [
   {
     minor: 1,
     major: 5,
-    majorShape: "",
-    minorShape: "G Shape",
     markers: [
       { string: 0, fret: 1 },
       { string: 0, fret: 4 },
@@ -22,8 +20,6 @@ const positions = [
   {
     minor: 2,
     major: 1,
-    majorShape: "G Shape",
-    minorShape: "",
     markers: [
       { string: 0, fret: 2 },
       { string: 0, fret: 4 },
