@@ -65,7 +65,7 @@ function App() {
         <>
           <div className="flex items-end justify-between">
             <Degrees
-              className="text-[8px] mr-2 mt-2 w-full"
+              className="text-[9px] sm:text-sm mr-2 mt-2 w-full"
               isAbbreviated
               degrees={keys[key].degrees}
             />
@@ -76,7 +76,7 @@ function App() {
             />
           </div>
           <Progressions
-            className="text-[8px] mt-1"
+            className="text-[8px] sm:text-sm xs:text-xs mt-1"
             isDesktop={isDesktop}
             progressions={keys[key].progressions}
           />
