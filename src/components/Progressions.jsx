@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export default function Progressions({ progressions }) {
+export default function Progressions({ progressions, className="", isDesktop }) {
   const [selected, setSelected] = useState("");
   return (
-    <div className="mt-2 w-full">
-      <ul className="grid grid-cols-5 gap-2 w-full">
+    <div className={className}>
+      <ul className={`grid grid-cols-5 ${isDesktop ? "gap-2" : "gap-0.5"} w-full`}>
         {progressions.map(({ chords, description }, i) => (
           <li
             key={description}
