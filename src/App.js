@@ -24,7 +24,7 @@ function App() {
     if (sortLR)
       sortedByNumber = sortedByNumber.toSorted((a, b) => a.start - b.start);
     setSortedPositions(sortedByNumber);
-  }, [key, sortLR]);
+  }, [key, sortLR, keyType]);
 
   const isDesktop = width > 1024;
 
