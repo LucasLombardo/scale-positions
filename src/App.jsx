@@ -29,7 +29,7 @@ function App() {
       {/* Top Bar */}
       <div className="fixed top-0 left-0 w-full h-16 flex items-center justify-between px-4 z-30 bg-gradient-to-r from-purple-800 via-fuchsia-700 to-pink-700 shadow-lg">
         {/* Left: Table */}
-        <table className="ml-10 text-white text-xs font-semibold rounded overflow-hidden shadow border border-white/20">
+        <table className="mx-auto text-white text-xs font-semibold rounded overflow-hidden shadow border border-white/20">
           <tbody>
             <tr>
               {romanNumerals.map((num) => (
@@ -45,7 +45,7 @@ function App() {
         </table>
         {/* Right: Settings Icon Button */}
         <button
-          className="ml-auto p-2 rounded-full hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+          className="sm:absolute sm:right-4 p-2 rounded-full hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white"
           onClick={() => setSettingsOpen(true)}
           aria-label="Open settings"
         >
