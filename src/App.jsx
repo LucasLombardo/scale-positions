@@ -1,13 +1,13 @@
-import positions from "./data/positions";
-import keys from "./data/keys";
+// import positions from "./data/positions";
+// import keys from "./data/keys";
 import { useEffect, useState } from "react";
-import Radios from "./components/Radios";
-import Select from "./components/Select";
-import Progressions from "./components/Progressions";
-import Degrees from "./components/Degrees";
-import ScalePosition from "./components/ScalePosition";
-import FullBoard from "./components/FullBoard";
-import { useScreenWidth } from "./hooks";
+// import Radios from "./components/Radios";
+// import Select from "./components/Select";
+// import Progressions from "./components/Progressions";
+// import Degrees from "./components/Degrees";
+// import ScalePosition from "./components/ScalePosition";
+// import FullBoard from "./components/FullBoard";
+// import { useScreenDimensions } from "./hooks";
 
 function App() {
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -58,9 +58,14 @@ function App() {
       </div>
 
       {/* Settings Panel (Drawer) */}
+      <div className="fixed inset-0 z-30 pointer-events-none">
+        <div
+          className={`absolute inset-0 bg-black transition-opacity duration-300 ${settingsOpen ? 'opacity-40 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+          onClick={settingsOpen ? () => setSettingsOpen(false) : undefined}
+        />
+      </div>
       <div
-        className={`fixed top-0 right-0 h-full w-72 bg-white shadow-2xl z-40 transform transition-transform duration-300 ease-in-out ${settingsOpen ? "translate-x-0" : "translate-x-full"}`}
-        style={{ boxShadow: "-4px 0 24px 0 rgba(80,0,120,0.10)" }}
+        className={`fixed top-0 right-0 h-full w-72 bg-white z-40 transform transition-transform duration-300 ease-in-out ${settingsOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="flex items-center justify-between px-4 py-4 border-b">
           <span className="font-semibold text-lg text-purple-700">Settings</span>
