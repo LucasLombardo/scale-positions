@@ -10,7 +10,6 @@ export default function Settings() {
     orientation, setOrientation,
     setSettingsOpen, settingsOpen,
   } = useSettings();
-  console.log(settingsOpen);
 
   return (
     <>
@@ -74,7 +73,7 @@ export default function Settings() {
               value={accidental}
               onChange={e => setAccidental(e.target.value)}
             >
-              <option value="flat">Flat</option>
+              {/* <option value="flat">Flat</option> */}
               <option value="natural">Natural</option>
               <option value="sharp">Sharp</option>
             </select>
