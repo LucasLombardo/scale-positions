@@ -9,6 +9,7 @@ export function SettingsProvider({ children }) {
   const [sortPositions, setSortPositions] = useState("location");
   const [lockOrientation, setLockOrientation] = useState(false);
   const [orientation, setOrientation] = useState("portrait");
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   const value = {
     rootNote, setRootNote,
@@ -17,6 +18,7 @@ export function SettingsProvider({ children }) {
     sortPositions, setSortPositions,
     lockOrientation, setLockOrientation,
     orientation, setOrientation,
+    settingsOpen, setSettingsOpen,
   };
 
   return (

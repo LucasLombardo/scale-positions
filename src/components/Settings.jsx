@@ -1,6 +1,6 @@
 import { useSettings } from "../SettingsContext";
 
-export default function Settings({ open, onClose }) {
+export default function Settings() {
   const {
     rootNote, setRootNote,
     type, setType,
@@ -8,26 +8,28 @@ export default function Settings({ open, onClose }) {
     sortPositions, setSortPositions,
     lockOrientation, setLockOrientation,
     orientation, setOrientation,
+    setSettingsOpen, settingsOpen,
   } = useSettings();
+  console.log(settingsOpen);
 
   return (
     <>
       {/* Overlay */}
       <div className="fixed inset-0 z-30 pointer-events-none">
         <div
-          className={`absolute inset-0 bg-black transition-opacity duration-300 ${open ? 'opacity-40 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-          onClick={open ? onClose : undefined}
+          className={`absolute inset-0 bg-black transition-opacity duration-300 ${settingsOpen ? 'opacity-40 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+          onClick={() => setSettingsOpen(false)}
         />
       </div>
       {/* Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-72 bg-white z-40 transform transition-transform duration-300 ease-in-out ${open ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 h-full w-72 bg-white z-40 transform transition-transform duration-300 ease-in-out ${settingsOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="flex items-center justify-between px-4 py-4 border-b">
           <span className="font-semibold text-lg text-purple-700">Settings</span>
           <button
             className="p-1 rounded hover:bg-purple-100 focus:outline-none"
-            onClick={onClose}
+            onClick={() => setSettingsOpen(false)}
             aria-label="Close settings"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-purple-700">
