@@ -74,7 +74,7 @@ function App() {
             </svg>
           </button>
         </div>
-        <div className="p-4 text-gray-700 space-y-5">
+        <div className="p-4 text-gray-700 space-y-5 overflow-y-auto max-h-[calc(100vh-64px)]">
           {/* Root Note */}
           <div>
             <label htmlFor="root-note" className="block text-sm font-medium mb-1">Root Note</label>
