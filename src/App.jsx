@@ -8,17 +8,18 @@ import { useEffect, useState } from "react";
 // import ScalePosition from "./components/ScalePosition";
 // import FullBoard from "./components/FullBoard";
 // import { useScreenDimensions } from "./hooks";
+import { useSettings } from "./SettingsContext";
 
 function App() {
   const [settingsOpen, setSettingsOpen] = useState(false);
-
-  // Settings state
-  const [rootNote, setRootNote] = useState("C");
-  const [type, setType] = useState("major pentatonic");
-  const [accidental, setAccidental] = useState("natural");
-  const [sortPositions, setSortPositions] = useState("location");
-  const [lockOrientation, setLockOrientation] = useState(false);
-  const [orientation, setOrientation] = useState("portrait");
+  const {
+    rootNote, setRootNote,
+    type, setType,
+    accidental, setAccidental,
+    sortPositions, setSortPositions,
+    lockOrientation, setLockOrientation,
+    orientation, setOrientation,
+  } = useSettings();
 
   // C major degrees and chords
   const romanNumerals = ["I", "ii", "iii", "IV", "V", "vi", "vii°"];
