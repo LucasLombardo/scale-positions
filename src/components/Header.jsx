@@ -1,10 +1,9 @@
 import { useSettings } from "../SettingsContext";
+import degrees from "../data/degrees";
 
 export default function Header() {
-    // C major degrees and chords
-    const romanNumerals = ["I", "ii", "iii", "IV", "V", "vi", "vii°"];
-    const chords = ["C", "Dm", "Em", "F", "G", "Am", "Bdim"];
-    const { setSettingsOpen } = useSettings();
+    const { key, setSettingsOpen } = useSettings();
+    const { numerals, chords } = degrees[key];
 
     return (
         <div className="fixed top-0 left-0 w-full h-16 flex items-center justify-between px-4 z-30 bg-gradient-to-r from-purple-800 via-fuchsia-700 to-pink-700 shadow-lg">
@@ -12,7 +11,7 @@ export default function Header() {
             <table className="mx-auto text-white text-xs font-semibold rounded overflow-hidden shadow border border-white/20">
                 <tbody>
                     <tr>
-                        {romanNumerals.map((num) => (
+                        {numerals.map((num) => (
                             <td key={num} className="px-2 py-1 text-center">{num}</td>
                         ))}
                     </tr>
