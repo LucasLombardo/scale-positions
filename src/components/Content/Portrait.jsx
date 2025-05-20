@@ -13,6 +13,7 @@ export default function Portrait() {
 
   return (
     <div className="grid grid-cols-2 gap-2 place-items-center mt-2 text-sm">
+      {/* Position charts */}
       {sortedPositions.map((position, i) => (
         <ScalePosition
           key={i}
@@ -22,6 +23,24 @@ export default function Portrait() {
           width={width / 2.2}
         />
       ))}
+      {/* Common Progressions */}
+      <div>
+        <table className="text-[0.6rem] text-center mr-2">
+          <tbody>
+            {keys[key].progressions.slice(0, 6).map((p, i, arr) => (
+              <tr
+                key={p.description}
+                className={
+                  (i !== arr.length - 1 ? "border-b border-gray-400" : "")
+                }
+              >
+                <td className="px-[0.7rem] py-1 border-r border-gray-400 align-middle text-center"><strong>{p.description}</strong></td>
+                <td className="px-[0.7rem] py-1 align-middle text-center">{p.chords.join(", ")}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

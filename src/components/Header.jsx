@@ -12,12 +12,12 @@ export default function Header() {
                 <tbody>
                     <tr>
                         {numerals.map((num) => (
-                            <td key={num} className="px-2 py-1 text-center">{num}</td>
+                            <td key={num} className="px-3 py-2 text-center align-middle">{num}</td>
                         ))}
                     </tr>
                     <tr>
                         {chords.map((chord) => (
-                            <td key={chord} className="px-2 py-1 text-center">{chord}</td>
+                            <td key={chord} className="px-3 py-2 text-center align-middle">{chord}</td>
                         ))}
                     </tr>
                 </tbody>

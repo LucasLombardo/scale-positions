@@ -8,12 +8,12 @@ export default function Degrees({ degrees, isAbbreviated, className = "" }) {
 
   return (
     <table
-      className={`${className} divide-y divide-slate-200 border text-center`}
+      className={`${className} divide-y divide-slate-200 border text-center w-full`}
     >
       <thead className="w-full">
         <tr className="grid grid-cols-7 w-full auto-cols-max divide-x">
           {degrees.map(([label]) => (
-            <th key={label} className="px-2 py-1">
+            <th key={label} className="px-3 py-2 text-center align-middle">
               {isAbbreviated ? label.split(" ")[0] : label}
             </th>
           ))}
@@ -22,7 +22,7 @@ export default function Degrees({ degrees, isAbbreviated, className = "" }) {
       <tbody>
         <tr className="grid grid-cols-7 w-full divide-x">
           {degrees.map(([_, chord]) => (
-            <td key={chord} className="px-2 py-1">
+            <td key={chord} className="px-3 py-2 text-center align-middle">
               {isAbbreviated ? abbreviateChord(chord) : chord}
             </td>
           ))}
