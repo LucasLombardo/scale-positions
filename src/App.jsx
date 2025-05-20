@@ -7,7 +7,7 @@ function App() {
     <div className="relative min-h-screen bg-gray-50">
       <Header />
       <Settings />
-      <div className="pt-20">
+      <div className="pt-20 min-h-screen">
         <Content />
       </div>
     </div>
