@@ -89,7 +89,7 @@ export default function Fretboard({
               cx={x}
               cy={stringPositions[string]}
               r="12"
-              fill={isKeyNote ? "black" : "white"}
+              fill={isKeyNote ? "#9c1daf" : "white"}
               stroke="black"
               strokeWidth="2"
             />

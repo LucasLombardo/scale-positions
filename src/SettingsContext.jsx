@@ -11,6 +11,27 @@ export function SettingsProvider({ children }) {
   const [orientation, setOrientation] = useState("portrait");
   const [settingsOpen, setSettingsOpen] = useState(false);
 
+  const typeMap = {
+    "major pentatonic": "",
+    "minor pentatonic": "m",
+    "major": "",
+    "minor": "m",
+  }
+
+  const accidentalMap = {
+    sharp: "#",
+    natural: "",
+  }
+
+  const keyTypeMap = {
+    "major pentatonic": "major",
+    "minor pentatonic": "minor",
+    "major": "major",
+    "minor": "minor",
+  }
+
+  const key = rootNote + accidentalMap[accidental] + typeMap[type];
+
   const value = {
     rootNote, setRootNote,
     type, setType,
@@ -19,6 +40,8 @@ export function SettingsProvider({ children }) {
     lockOrientation, setLockOrientation,
     orientation, setOrientation,
     settingsOpen, setSettingsOpen,
+    key,
+    keyType: keyTypeMap[type],
   };
 
   return (

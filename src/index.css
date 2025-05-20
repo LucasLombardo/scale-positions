@@ -27,6 +27,6 @@ svg {
   fill: lightslategray;
 }
 .string--bold {
-  fill: navy;
+  fill: #6e22a8;
   font-weight: bold;
 }
