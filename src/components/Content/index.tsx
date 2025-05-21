@@ -1,7 +1,7 @@
-import Portrait from "./Portrait";
-import Landscape from "./Landscape";
-import { useOrientation } from "../../hooks";
-import { Orientation } from "../../constants";
+import Portrait from "@components/Content/Portrait";
+import Landscape from "@components/Content/Landscape";
+import { useOrientation } from "@hooks/useOrientation";
+import { Orientation } from "@constants/settings";
 
 export default function Content() {
   const orientation = useOrientation();

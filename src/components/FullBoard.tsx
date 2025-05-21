@@ -1,6 +1,6 @@
-import Fretboard from "./Fretboard";
-import notes from "../data/notes";
-import keysData from "../data/keys";
+import Fretboard from "@components/Fretboard";
+import notes from "@data/notes";
+import keysData from "@data/keys";
 
 interface KeyData {
   pentatonic: string[];

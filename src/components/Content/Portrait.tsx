@@ -1,8 +1,8 @@
-import positions from "../../data/positions";
-import keys from "../../data/keys";
-import ScalePosition from "../ScalePosition";
+import positions from "@data/positions";
+import keys from "@data/keys";
+import ScalePosition from "@components/ScalePosition";
 import { useSettings } from "../../SettingsContext";
-import { useScreenDimensions } from "../../hooks";
+import { useScreenDimensions } from "@hooks/useDimensions";
 
 interface KeyData {
   pentatonic: string[];

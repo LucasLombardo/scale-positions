@@ -1,4 +1,4 @@
-import notes from "../data/notes";
+import notes from "@data/notes";
 import React from "react";
 
 interface Marker {

@@ -13,7 +13,7 @@ import {
   AccidentalType,
   SortPosition,
   Orientation,
-} from "./constants";
+} from "@constants/settings";
 
 // Define types for the context value
 export type SettingsContextType = {

@@ -1,6 +1,6 @@
 import { useScreenDimensions } from "./useDimensions";
 import { useSettings } from "../SettingsContext";
-import { Orientation } from "../constants";
+import { Orientation } from "@constants/settings";
 
 /**
  * useOrientation

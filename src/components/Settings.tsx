@@ -5,7 +5,7 @@ import {
   AccidentalType,
   SortPosition,
   Orientation,
-} from "../constants";
+} from "@constants/settings";
 
 export default function Settings() {
   const {
