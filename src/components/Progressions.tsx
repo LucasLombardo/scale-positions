@@ -1,11 +1,23 @@
 import { useState } from "react";
+import React from "react";
+
+interface Progression {
+  chords: string[];
+  description: string;
+}
+
+interface ProgressionsProps {
+  progressions: Progression[];
+  className?: string;
+  isDesktop: boolean;
+}
 
 export default function Progressions({
   progressions,
   className = "",
   isDesktop,
-}) {
-  const [selected, setSelected] = useState("");
+}: ProgressionsProps) {
+  const [selected, setSelected] = useState<number | "">("");
   return (
     <div className={className}>
       <ul

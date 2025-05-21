@@ -1,5 +1,17 @@
-export default function Degrees({ degrees, isAbbreviated, className = "" }) {
-  const abbreviateChord = (chord) => {
+import React from "react";
+
+interface DegreesProps {
+  degrees: [string, string][];
+  isAbbreviated: boolean;
+  className?: string;
+}
+
+export default function Degrees({
+  degrees,
+  isAbbreviated,
+  className = "",
+}: DegreesProps) {
+  const abbreviateChord = (chord: string) => {
     let result = chord.replace(" minor", "m");
     result = result.replace(" major", "");
     result = result.replace(" diminished", "dim");

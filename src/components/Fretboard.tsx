@@ -1,4 +1,21 @@
 import notes from "../data/notes";
+import React from "react";
+
+interface Marker {
+  string: number;
+  fret: number;
+}
+
+interface FretboardProps extends React.SVGProps<SVGSVGElement> {
+  width?: number;
+  height?: number;
+  fretCount?: number;
+  startingFret?: number;
+  markers?: Marker[];
+  keyNote?: string;
+  boldedNotes?: string[];
+}
+
 export default function Fretboard({
   width = 300,
   height = 250,
@@ -8,7 +25,7 @@ export default function Fretboard({
   keyNote = "",
   boldedNotes = [],
   ...props
-}) {
+}: FretboardProps) {
   const MARGIN = { LEFT: 30, RIGHT: 10, TOP: 15, BOTTOM: 35 };
   const innerHeight = height - MARGIN.TOP - MARGIN.BOTTOM;
   const innerWidth = width - MARGIN.LEFT - MARGIN.RIGHT;

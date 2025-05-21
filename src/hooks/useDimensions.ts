@@ -7,10 +7,13 @@ import { useState, useEffect } from "react";
  *
  * @returns {[number, number]} [width, height] - The current window width and height.
  */
-export function useScreenDimensions() {
-  const [dimensions, setDimensions] = useState([window.innerWidth, window.innerHeight]);
+export function useScreenDimensions(): [number, number] {
+  const [dimensions, setDimensions] = useState<[number, number]>([
+    window.innerWidth,
+    window.innerHeight,
+  ]);
 
-  function handleWindowSizeChange() {
+  function handleWindowSizeChange(): void {
     console.log("orientation");
     setDimensions([window.innerWidth, window.innerHeight]);
   }

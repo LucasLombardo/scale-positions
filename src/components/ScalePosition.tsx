@@ -1,7 +1,37 @@
 import Fretboard from "./Fretboard";
-import keys from "../data/keys";
+import keysData from "../data/keys";
 
-export default function ScalePosition({ selectedKey, keyType, position, width = 220 }) {
+interface KeyData {
+  pentatonic: string[];
+  full: string[];
+  positionStarts: number[];
+  progressions: { chords: string[]; description: string }[];
+}
+
+interface Keys {
+  [key: string]: KeyData;
+}
+
+interface Marker {
+  string: number;
+  fret: number;
+}
+
+interface ScalePositionProps {
+  selectedKey: string;
+  keyType: string;
+  position: { markers: Marker[]; [key: string]: any };
+  width?: number;
+}
+
+const keys: Keys = keysData;
+
+export default function ScalePosition({
+  selectedKey,
+  keyType,
+  position,
+  width = 220,
+}: ScalePositionProps) {
   const positionNumber = position[keyType.toLowerCase()];
   const formattedKeyType = keyType[0].toUpperCase() + keyType.slice(1);
   return (
