@@ -1,4 +1,11 @@
 import { useSettings } from "../SettingsContext";
+import {
+  RootNote,
+  ScaleType,
+  AccidentalType,
+  SortPosition,
+  Orientation,
+} from "../constants";
 
 export default function Settings() {
   const {
@@ -69,13 +76,18 @@ export default function Settings() {
               id="root-note"
               className="w-full border rounded px-2 py-1"
               value={rootNote}
-              onChange={(e) => setRootNote(e.target.value)}
+              onChange={(e) => setRootNote(e.target.value as RootNote)}
             >
-              {["A", "B", "C", "D", "E", "F", "G"].map((note) => (
-                <option key={note} value={note}>
-                  {note}
-                </option>
-              ))}
+              {(Object.keys(RootNote) as Array<keyof typeof RootNote>).map(
+                (key) => {
+                  const note = RootNote[key];
+                  return (
+                    <option key={note} value={note}>
+                      {note}
+                    </option>
+                  );
+                },
+              )}
             </select>
           </div>
           {/* Type */}
@@ -87,14 +99,14 @@ export default function Settings() {
               id="type"
               className="w-full border rounded px-2 py-1"
               value={type}
-              onChange={(e) =>
-                setType(
-                  e.target.value as import("../SettingsContext").SettingsType,
-                )
-              }
+              onChange={(e) => setType(e.target.value as ScaleType)}
             >
-              <option value="major pentatonic">Major Pentatonic</option>
-              <option value="minor pentatonic">Minor Pentatonic</option>
+              <option value={ScaleType.MAJOR_PENTATONIC}>
+                Major Pentatonic
+              </option>
+              <option value={ScaleType.MINOR_PENTATONIC}>
+                Minor Pentatonic
+              </option>
             </select>
           </div>
           {/* Accidental */}
@@ -109,15 +121,10 @@ export default function Settings() {
               id="accidental"
               className="w-full border rounded px-2 py-1"
               value={accidental}
-              onChange={(e) =>
-                setAccidental(
-                  e.target.value as import("../SettingsContext").AccidentalType,
-                )
-              }
+              onChange={(e) => setAccidental(e.target.value as AccidentalType)}
             >
-              {/* <option value="flat">Flat</option> */}
-              <option value="natural">Natural</option>
-              <option value="sharp">Sharp</option>
+              <option value={AccidentalType.NATURAL}>Natural</option>
+              <option value={AccidentalType.SHARP}>Sharp</option>
             </select>
           </div>
           {/* Sort Positions */}
@@ -130,9 +137,9 @@ export default function Settings() {
                 <input
                   type="radio"
                   name="sort-positions"
-                  value="location"
-                  checked={sortPositions === "location"}
-                  onChange={() => setSortPositions("location")}
+                  value={SortPosition.LOCATION}
+                  checked={sortPositions === SortPosition.LOCATION}
+                  onChange={() => setSortPositions(SortPosition.LOCATION)}
                   className="accent-purple-700"
                 />
                 Location
@@ -141,9 +148,9 @@ export default function Settings() {
                 <input
                   type="radio"
                   name="sort-positions"
-                  value="number"
-                  checked={sortPositions === "number"}
-                  onChange={() => setSortPositions("number")}
+                  value={SortPosition.NUMBER}
+                  checked={sortPositions === SortPosition.NUMBER}
+                  onChange={() => setSortPositions(SortPosition.NUMBER)}
                   className="accent-purple-700"
                 />
                 Number
@@ -175,15 +182,10 @@ export default function Settings() {
                 id="orientation"
                 className="w-full border rounded px-2 py-1"
                 value={orientation}
-                onChange={(e) =>
-                  setOrientation(
-                    e.target
-                      .value as import("../SettingsContext").OrientationType,
-                  )
-                }
+                onChange={(e) => setOrientation(e.target.value as Orientation)}
               >
-                <option value="landscape">Landscape</option>
-                <option value="portrait">Portrait</option>
+                <option value={Orientation.LANDSCAPE}>Landscape</option>
+                <option value={Orientation.PORTRAIT}>Portrait</option>
               </select>
             </div>
           )}

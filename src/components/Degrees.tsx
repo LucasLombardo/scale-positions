@@ -1,5 +1,3 @@
-import React from "react";
-
 interface DegreesProps {
   degrees: [string, string][];
   isAbbreviated: boolean;

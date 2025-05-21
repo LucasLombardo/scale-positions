@@ -1,7 +1,6 @@
 import { useSettings } from "../SettingsContext";
 import degrees from "../data/degrees";
 
-// Add type for degrees
 import type { DegreesType } from "../data/degrees";
 
 export default function Header() {
