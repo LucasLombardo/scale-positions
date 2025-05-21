@@ -10,18 +10,34 @@ export default function Header() {
   return (
     <div className="fixed top-0 left-0 w-full h-16 flex items-center justify-between px-4 z-30 bg-gradient-to-r from-purple-800 via-fuchsia-700 to-pink-700 shadow-lg">
       {/* Left: Table */}
-      <table className="mx-auto text-white text-xs font-semibold rounded overflow-hidden shadow border border-white/20">
+      <table className="mx-auto text-white text-xs font-semibold rounded overflow-hidden border-separate border-spacing-0">
         <tbody>
           <tr>
-            {numerals.map((num: string) => (
-              <td key={num} className="px-3 py-2 text-center align-middle">
+            {numerals.map((num: string, idx: number) => (
+              <td
+                key={num}
+                className={
+                  `px-1 sm:px-3 py-1 sm:py-2 text-center align-middle min-w-9 border-[0.5px] border-white ` +
+                  `${idx === 0 ? 'border-l-0' : ''} ` +
+                  `${idx === numerals.length - 1 ? 'border-r-0' : ''} ` +
+                  'border-t-0'
+                }
+              >
                 {num}
               </td>
             ))}
           </tr>
           <tr>
-            {chords.map((chord: string) => (
-              <td key={chord} className="px-3 py-2 text-center align-middle">
+            {chords.map((chord: string, idx: number) => (
+              <td
+                key={chord}
+                className={
+                  `px-1 sm:px-3 py-1 sm:py-2 text-center align-middle min-w-[1em] border-[0.5px] border-white ` +
+                  `${idx === 0 ? 'border-l-0' : ''} ` +
+                  `${idx === chords.length - 1 ? 'border-r-0' : ''} ` +
+                  'border-b-0'
+                }
+              >
                 {chord}
               </td>
             ))}
