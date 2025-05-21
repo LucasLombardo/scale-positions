@@ -19,10 +19,12 @@ import {
 export type SettingsContextType = {
   rootNote: RootNote;
   setRootNote: Dispatch<SetStateAction<RootNote>>;
+  safeSetRootNote: (note: RootNote) => void;
   type: ScaleType;
   setType: Dispatch<SetStateAction<ScaleType>>;
   accidental: AccidentalType;
   setAccidental: Dispatch<SetStateAction<AccidentalType>>;
+  safeSetAccidental: (accidental: AccidentalType) => void;
   sortPositions: SortPosition;
   setSortPositions: Dispatch<SetStateAction<SortPosition>>;
   lockOrientation: boolean;
@@ -75,6 +77,29 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
 
   const key = rootNote + accidentalMap[accidental] + typeMap[type];
 
+  const safeSetRootNote = (note: RootNote) => {
+    const isSharp = accidental === AccidentalType.SHARP;
+    // If the note only has a theoretical sharp, set the accidental to natural
+    if (isSharp && [RootNote.E, RootNote.B].includes(note)) {
+      setAccidental(AccidentalType.NATURAL);
+    }
+    setRootNote(note);
+  };
+
+  const safeSetAccidental = (accidental: AccidentalType) => {
+    const isSharp = accidental === AccidentalType.SHARP;
+    // If user selects a theoretical sharp, switch to the enharmonic equivalent
+    if (isSharp && rootNote === RootNote.E) {
+      setRootNote(RootNote.F);
+      setAccidental(AccidentalType.NATURAL);
+    } else if (isSharp && rootNote === RootNote.B) {
+      setRootNote(RootNote.C);
+      setAccidental(AccidentalType.NATURAL);
+    } else {
+      setAccidental(accidental);
+    }
+  };
+
   const value: SettingsContextType = {
     rootNote,
     setRootNote,
@@ -92,6 +117,8 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     setSettingsOpen,
     key,
     keyType: keyTypeMap[type],
+    safeSetRootNote,
+    safeSetAccidental,
   };
 
   return (

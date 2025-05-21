@@ -10,11 +10,11 @@ import {
 export default function Settings() {
   const {
     rootNote,
-    setRootNote,
+    safeSetRootNote,
     type,
     setType,
     accidental,
-    setAccidental,
+    safeSetAccidental,
     sortPositions,
     setSortPositions,
     lockOrientation,
@@ -76,7 +76,7 @@ export default function Settings() {
               id="root-note"
               className="w-full border rounded px-2 py-1"
               value={rootNote}
-              onChange={(e) => setRootNote(e.target.value as RootNote)}
+              onChange={(e) => safeSetRootNote(e.target.value as RootNote)}
             >
               {(Object.keys(RootNote) as Array<keyof typeof RootNote>).map(
                 (key) => {
@@ -121,7 +121,9 @@ export default function Settings() {
               id="accidental"
               className="w-full border rounded px-2 py-1"
               value={accidental}
-              onChange={(e) => setAccidental(e.target.value as AccidentalType)}
+              onChange={(e) =>
+                safeSetAccidental(e.target.value as AccidentalType)
+              }
             >
               <option value={AccidentalType.NATURAL}>Natural</option>
               <option value={AccidentalType.SHARP}>Sharp</option>
